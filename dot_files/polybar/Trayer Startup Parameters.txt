@@ -1,0 +1,6 @@
+
+
+trayer startup command:
+
+
+trayer --edge top --align right --widthtype request --padding 2 --SetDockType false --SetPartialStrut true --expand true --monitor 1 --transparent true --alpha 0 --height 26

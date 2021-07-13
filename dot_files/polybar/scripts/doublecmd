@@ -1,0 +1,5 @@
+#!/bin/bash
+
+doublecmd &
+
+exit 0

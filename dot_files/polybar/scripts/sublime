@@ -1,0 +1,5 @@
+#!/bin/bash
+
+subl &
+
+exit 0

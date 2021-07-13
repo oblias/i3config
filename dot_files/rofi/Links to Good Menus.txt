@@ -1,0 +1,133 @@
+
+
+Links to good rofi menus:
+
+https://github.com/davatorium/rofi
+https://github.com/svenstaro/rofi-calc
+https://github.com/Mange/rofi-emoji
+https://github.com/carnager/rofi-pass
+
+
+
+Large collections of menus:
+https://github.com/adi1090x/rofi
+
+To use this repo of menus, do this:
+
+Installation
+
+Everything here is created on Rofi version : 1.6.1-1
+
+First, Make sure you have the same (stable) version of rofi installed.
+On Arch / Arch-based : pacman -S rofi
+On Debian / Ubuntu : apt-get install rofi
+On Fedora : dnf install rofi
+
+Then, Clone this repository -
+
+$ git clone --depth=1 https://github.com/adi1090x/rofi.git
+
+
+Change to cloned directory and make setup.sh executable -
+$ cd rofi
+$ chmod +x setup.sh
+
+
+Run setup.sh and select your screen resolution -
+
+
+$ ./setup.sh
+
+[*] Installing Rofi Themes...
+
+[*] Choose your screen resolution -
+[1] 1920x1080
+[2] 1366x768
+
+[?] Select Option : 1
+
+[*] Installing fonts...
+[*] Creating a backup of your rofi configs...
+[*] Successfully Installed.
+
+
+That's it, These themes are now installed on your system to the .config/rofi folder.
+Note : These themes are like an ecosystem, everything here is connected with each other in some way. So... before modifying anything by your own, make sure you know what you doing.
+
+
+Tips
+
+Simple way to execute scripts
+There's a $HOME/.config/rofi/bin directory, which contains links to each script. you can execute these links to open any applet, menu, launcher or powermenu.
+
+You can add $HOME/.config/rofi/bin directory to your $PATH variable so that entering powermenu in the terminal (or executing this command) will summon the Powermenu. you can do it by -
+
+In bash
+
+# Add directory to the $PATH variable
+
+echo "PATH=$PATH:~/.config/rofi/bin" >> ~/.profile
+
+
+
+In zsh (oh-my-zsh)
+# Edit .zshrc and add this line
+export PATH=$HOME/.config/rofi/bin:$PATH
+
+
+
+Note: after doing this, your $PATH variable won't be updated, so you will need to log out and then back in to be able to summon the menus this way.
+
+
+
+
+Usage
+
+With polybar
+
+An example to use these APPLETS with polybar by adding modules and giving full paths of selected applet, eg: ~/.config/rofi/applets/menu/backlight.sh or simply name, eg: applet_backlight if you followed the method above -
+
+[module/backlight]
+type = custom/text
+content = 
+
+content-background = ${color.bg}
+content-foreground = ${color.cyan}
+
+click-left = ~/.config/rofi/applets/menu/backlight.sh &
+
+
+
+## Or...
+
+
+
+[module/backlight]
+type = custom/text
+content = 
+
+content-background = ${color.bg}
+content-foreground = ${color.green}
+
+click-left = applet_backlight
+
+
+
+
+
+
+With i3wm
+
+You can call the scripts by giving full path, eg: ~/.config/rofi/bin/menu_powermenu or follow method above to call the menu in one word. Then add these lines to your i3 config file -
+
+set $mod Mod4
+set $Alt Mod1
+bindsym $mod+m exec --no-startup-id menu_mpd
+bindsym $mod+n exec --no-startup-id menu_network
+bindsym $mod+p exec --no-startup-id ~/.config/rofi/bin/menu_powermenu
+#etc
+
+ 
+
+
+

@@ -1,0 +1,15 @@
+
+This is an example module file to make an application launcher
+for the polybar.  Change values to suit whatever app you want to 
+launch.
+
+
+
+
+
+
+
+[module/doublecmd]
+type = custom/script
+exec = echo 🌴
+click-left = /home/chaser/.config/polybar/scripts/doublecmd

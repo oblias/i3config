@@ -1,0 +1,525 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+;background = ${xrdb:color0:#222}
+;background = #222  ORIG
+background = #000000
+;background-alt = #e6444
+background-alt = #212121
+;foreground = ${xrdb:color7:#222}
+foreground = #00ffff
+foreground-alt = #555
+;primary = #ffb52a
+;primary = #9b30ff purple
+;primary = #000000 black
+primary = #212121
+primary-alt = #000000
+secondary = #e60053
+secondary-alt = #1a5c7c
+alert = #bd2c40
+alert-alt = #000000
+alert-alt2 = #ff0000
+
+############################## MAIN BAR SECTION FOR BAR ON LEFT MONITOR #################################
+##########################################################################################################
+##########################################################################################################
+
+[bar/example]
+;monitor = ${env:MONITOR:HDMI-1}
+monitor = DVI-I-1
+width = 100%
+;height = 27
+height = 34
+;offset-x = 1%
+;offset-y = 1%
+;radius = 6.0
+radius = 0.0
+fixed-center = true
+
+;BAR COLORS, AND CAN EVEN DO GRADIENTS WITH 0 1 2 - Comment out background entry to use
+background-0 = ${colors.primary-alt}
+background-1 = ${colors.secondary-alt}
+background-2 = ${colors.alert-alt}
+;background = ${colors.background}
+foreground = ${colors.foreground}
+
+;line-size = 2
+line-size = 0
+line-color = #f00
+
+;border-size = 4
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 0
+
+;#######################################################
+;########## CLICK ON POLYBAR ACTIONS ###################
+;click-left = pulseeffects &
+;click-right =
+;double-click-left =
+;double-click-right =
+;scroll-up =
+;scroll-down =
+;#######################################################
+
+;font-0 = fixed:pixelsize=12;1
+font-0 = Comic Mono:pixelsize=13;1
+font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
+font-2 = siji:pixelsize=12;1
+font-3 = Font Awesome 5 Free:pixelsize=12;2
+font-4 = Font Awesome:pixelsize=12;2
+font-5 = Font Awesome 5 Brands:pixelsize=12;2
+;font-6 = Weather Icons:size=12;1
+font-6 = ConkyColorsWeather:size=12;1
+font-7 = NotoColorEmoji:fontformat=truetype:scale=6:antialias=false;
+
+;################## BAR MODULES TO USE ############################
+modules-left = i3 networkspeeddown gpu-temp
+modules-center = time-calendar openweathermap-fullfeatured
+modules-right = cpu1 cpu-temp blank pulseaudio
+;###################################################################
+
+separator =  
+
+;###############################################################################################
+;############################## Systray Section ################################################
+;tray-position = left
+;tray-padding = 2
+
+
+;tray-background = #0063ff
+;tray-background = #212121
+tray-background = #003636
+
+;############################ Uncomment position and padding to make it show ####################
+;###############################################################################################
+
+;wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+############################## END OF MAIN BAR SECTION ON LEFT MONITOR ##############################
+######################################################################################################
+######################################################################################################
+
+
+######################### TIME-ONLY BAR SECTION FOR BAR ON RIGHT MONITOR #################################
+##########################################################################################################
+##########################################################################################################
+
+[bar/time]
+;monitor = ${env:MONITOR:HDMI-1}
+monitor = DP-5
+width = 100%
+;height = 27
+height = 34
+offset-x = 0%
+offset-y = 0%
+;radius = 6.0
+radius = 0
+fixed-center = true
+
+;BAR COLORS, AND CAN EVEN DO GRADIENTS WITH 0 1 2 - Comment out background entry to use
+background-0 = ${colors.primary-alt}
+background-1 = ${colors.secondary-alt}
+background-2 = ${colors.alert-alt}
+;background = ${colors.background}
+foreground = ${colors.foreground}
+
+;line-size = 2
+line-size = 0
+line-color = #f00
+
+;border-size = 4
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 0
+
+;#######################################################
+;########## CLICK ON POLYBAR ACTIONS ###################
+;click-left = pulseeffects &
+;click-right =
+;double-click-left =
+;double-click-right =
+;scroll-up =
+;scroll-down =
+;#######################################################
+
+;font-0 = fixed:pixelsize=12;1
+font-0 = Comic Mono:pixelsize=13;1
+font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
+font-2 = siji:pixelsize=12;1
+font-3 = Font Awesome 5 Free:pixelsize=12;2
+font-4 = Font Awesome:pixelsize=12;2
+font-5 = Font Awesome 5 Brands:pixelsize=12;2
+;font-6 = Weather Icons:size=12;1
+font-6 = ConkyColorsWeather:size=12;1
+font-7 = NotoColorEmoji:fontformat=truetype:scale=6:antialias=false;
+
+;################## BAR MODULES TO USE ############################
+;modules-left = 
+modules-center = time-calendar
+;modules-right = 
+;###################################################################
+
+separator =  
+
+tray-position =
+tray-padding =
+;tray-background = #0063ff
+;tray-background = #212121
+tray-background = #003636
+
+;wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+############################## END OF TIME BAR SECTION ON RIGHT MONITOR ##############################
+######################################################################################################
+######################################################################################################
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+;index-sort = false
+wrapping-scroll = true
+
+; DEFINE LABELS AND ICONS FOR ALL WORKSPACES -ORIGINAL
+;ws-icon-0 = 1;
+;ws-icon-1 = 2;
+;ws-icon-2 = 3;♟
+;ws-icon-3 = 4;
+;ws-icon-4 = 5;
+;ws-icon-5 = 6;
+;ws-icon-6 = 7;
+;ws-icon-7 = 8;
+;ws-icon-8 = 9;♟
+;ws-icon-9 = 10;♟
+;ws-icon-default = ♟
+
+; DEFINE LABELS AND ICONS FOR ALL WORKSPACES
+ws-icon-0 = 1;L
+ws-icon-1 = 2;R
+ws-icon-2 = 3;L
+ws-icon-3 = 4;R
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+ws-icon-default = ♟
+
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
+
+label-mode-padding = 2
+label-mode-foreground = #000
+;label-mode-foreground = #ffffff
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+label-focused = %index% %icon%
+;label-focused-background = ${colors.background-alt}
+label-focused-foreground = ${colors.alert-alt2}
+;label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index% %icon% 
+label-unfocused-padding = 2
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index% %icon%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index% %icon%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+; Separator in between workspaces
+; label-separator = |
+
+[module/openweathermap-fullfeatured]
+type = custom/script
+exec = /home/chaser/.config/polybar/openweathermap-fullfeatured.sh
+interval = 600
+;label-font = 3
+
+[module/blank]
+type = custom/script
+exec = echo " "
+format-padding = 0
+
+[module/cpu-label]
+type = custom/script
+exec = echo CPU:
+padding-right = 0
+
+[module/cpu-temp]
+type = custom/script
+format-prefix = "CPU:"
+format-prefix-foreground = #cd1f3f
+exec = /home/chaser/.config/polybar/scripts/cpu-temp.sh
+interval = 2
+;label-font = 3
+
+[module/gpu-label]
+type = custom/script
+exec = echo GPU:
+format-padding = 0
+
+[module/gpu-temp]
+type = custom/script
+format-prefix = "GPU:"
+format-prefix-foreground = #cd1f3f
+exec = /home/chaser/.config/polybar/scripts/gpu-temp.sh
+format-suffix = "°"
+interval = 2
+;label-font = 3
+
+;[module/networkspeeddown]
+;https://github.com/jaagr/polybar/wiki/Module:-network
+;type = internal/network
+;interface = enp8s0
+;label-connected = "%downspeed:7%"
+;format-connected = <label-connected>
+;format-connected-prefix = "💈"
+;format-connected-prefix-foreground = #3EC13F
+;format-connected-foreground = ${colors.foreground}
+;format-connected-background = ${colors.background}
+;format-connected-underline = #62FF00
+
+[module/showflag]
+type = custom/script
+exec = echo 󾓦
+format-padding = 1
+
+[module/time-calendar]
+type = custom/script
+;exec = date '+%l:%M:%S %a %m-%d'
+exec = date '+%a %m-%d %l:%M:%S'
+click-left = gnome-terminal -e calcurse
+;format-prefix = "󾓦 "
+label = %output%
+interval = 5
+
+[module/blanktext]
+type = custom/script
+exec = echo "        "
+format-padding = 1
+
+
+[module/date]
+type = internal/date
+interval = 1
+
+date =
+;date-alt = " %Y-%m-%d"
+
+
+;time = %H:%M
+;time =  %l:%M:%S %a %m-%d
+;time =  %l:%M:%S %a %m-%d
+time = 󾓦 %l:%M:%S %a %m-%d
+;time-alt = %H:%M:%S
+
+;format-prefix =   NOTE... I THINK THIS CONTROLS THE LEADING 0 IN HOUR, BUT I'M NOT SURE
+format-prefix-foreground = ${colors.foreground-alt}
+;format-underline = #0a6cf5
+format-underline = #000000
+
+label = %date% %time%
+
+[module/calcurse]
+type = custom/script
+;exec = echo 
+exec = echo 🌴
+click-left = gnome-terminal -e calcurse &
+
+[module/cpu1]
+;https://github.com/jaagr/polybar/wiki/Module:-cpu
+type = internal/cpu
+; Seconds to sleep between updates
+; Default: 1
+interval = 1
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+;   
+;format-prefix = " "
+;format-prefix = "CPU:"
+;format-prefix-foreground = #cd1f3f
+;format-underline = #645377
+
+; Available tags:
+;   <label> (default)
+;   <bar-load>
+;   <ramp-load>
+;   <ramp-coreload>
+;format = <label> <ramp-coreload>
+format = <label>
+
+format-padding = 2
+
+; Available tokens:
+;   %percentage% (default) - total cpu load
+;   %percentage-cores% - load percentage for each core
+;   %percentage-core[1-9]% - load percentage for specific core
+;label-font = 3
+label = CPU:%percentage%%
+;label = %percentage%%
+
+; Spacing between individual per-core ramps
+;ramp-coreload-spacing = 1
+;ramp-coreload-0 = ▁
+;ramp-coreload-1 = ▂
+;ramp-coreload-2 = ▃
+;ramp-coreload-3 = ▄
+;ramp-coreload-4 = ▅
+;ramp-coreload-5 = ▆
+;ramp-coreload-6 = ▇
+;ramp-coreload-7 = █
+
+[module/networkspeeddown]
+;https://github.com/jaagr/polybar/wiki/Module:-network
+type = internal/network
+;interface = wlp3s0
+;interface = enp14s0
+;interface = enp0s31f6
+interface = enp8s0
+label-connected = "%downspeed:7%"
+format-connected = <label-connected>
+;format-connected-prefix = ""
+format-connected-prefix = "🔷"
+format-connected-prefix-foreground = #fefefe
+;format-connected-foreground = #fefefe
+;format-connected-background = #8d62ad
+
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+;format-volume = <label-volume> <bar-volume>
+format-volume = <label-volume>
+;label-volume = VOL %percentage%%
+;label-volume =   %percentage%%
+label-volume = 🔊 %percentage%%
+label-volume-foreground = ${root.foreground}
+
+;label-muted = 🔇 muted
+;label-muted =  %percentage%%
+label-muted = 🔇 %percentage%%
+;label-muted-foreground = #666
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/alsa]
+type = internal/alsa
+
+format-volume = <label-volume> <bar-volume>
+label-volume = VOL
+label-volume-foreground = ${root.foreground}
+
+format-muted-prefix = " "
+format-muted-foreground = ${colors.foreground-alt}
+label-muted = sound muted
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
